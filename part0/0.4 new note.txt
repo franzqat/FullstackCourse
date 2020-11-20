@@ -1,0 +1,29 @@
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note with content as Form Data {note: this is a post}
+
+note over server:
+the server runs the local js script that adds
+the new note to the json and redirects to /notes
+end note
+
+server-->browser: HTTP status code 302, redirect to /exampleapp/notes
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: fetch the HTML code...
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: fetch the HTML style...
+
+note over browser:
+browser starts to render the page according to the css
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+
+
+browser->server: HTTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+server-->browser: Returns the current json list 
+note over browser:
+browser run the code in main.js and shows the notes list
+end note
+
+

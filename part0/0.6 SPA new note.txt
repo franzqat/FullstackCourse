@@ -1,0 +1,20 @@
+title SPA
+
+note over browser:
+press button
+end note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+browser->server: It contains with {content: "this is a test", date: "2020-11-20T14:04:55.759Z"} as payload
+
+
+server-->browser: HTTP status code 201,
+note over server:
+runs spa.js code, 
+the event handler creates a new note, it renderes 
+the note list on the page and sends the new note to the server
+end note
+
+
+note over browser:
+browser enjoys the note list updated
+end note
